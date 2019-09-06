@@ -1,0 +1,151 @@
+/* Initial settings */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+/* 设置背景色 */
+#main {
+    background: #f5f5f5;
+    height: 100vh;
+}
+
+/* 设置首部 */
+.header h1 {
+    background: #42b983;
+    color: white;
+    font-size: 3.2em;
+    text-align: center;
+    padding: 15px 0;
+}
+
+/* 设置标题 */
+.title p {
+    font-size: 1.2em;
+    color: #555;
+    font-weight: 600;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* 将功能区居中 */
+.input-todo,
+.todo-list {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* 设置基础间隔 */
+.input-todo ~ div {
+    margin-top: 14px;
+}
+
+.todo-list h2 + ul {
+    margin-top: 6px;
+}
+
+/* 设置输入区的样式 */
+.input-todo > * {
+    display: block;
+    font-size: 1.4em;
+}
+
+.input-todo {
+    display: flex;
+}
+
+.input-todo input,
+.input-todo button {
+    padding: 9px;
+    border: 2px solid #333;
+    border-radius: 3px;
+    outline: none;
+}
+
+.input-todo input {
+    flex: 1;
+    margin-right: 2px;
+}
+
+.input-todo button {
+    background: #42b983;
+    color: white;
+    cursor: pointer;
+}
+
+.input-todo button:active {
+    transform: translate(3px, 3px);
+}
+
+/* 设置内容区的样式 */
+.todo-list {
+    background: white;
+    padding: 12px;
+    font-size: 1.6em;
+    border-radius: 3px;
+}
+
+.todo-list h2 {
+    font-size: 1.3em;
+    color: #555;
+}
+
+.todo-list ul li {
+    padding: 8px 0;
+}
+
+.todo-list.completed ul li span {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.todo-list ul li {
+    display: flex;
+    transition: color 200ms ease-in-out;
+}
+
+.todo-list ul li:hover {
+    color: #42b983;
+}
+
+.todo-list ul li > * {
+    display: block;
+}
+
+.todo-list ul li span {
+    flex: 1;
+}
+
+.todo-list ul li button {
+    width: 58px;
+    margin-left: 2px;
+    background: #eee;
+    border: 1px solid #666;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 300ms ease-in-out,
+        color 300ms ease-in-out,
+        border 300ms ease-in-out,
+        font-weight 300ms ease-in-out;
+}
+
+.todo-list .done:hover,
+.todo-list .delete:hover {
+    color: white;
+    border: 2px solid #333;
+    font-weight: 600;
+}
+
+.todo-list .done:hover {
+    background: #42b983;
+}
+
+.todo-list .delete:hover {
+    background: tomato;
+}

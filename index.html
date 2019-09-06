@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Todo</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./lib/vue.js"></script>
+</head>
+<body>
+    <div id="main">
+        <div class="header">
+            <h1>Vue Todo</h1>
+        </div>
+        <div class="title">
+            <p>今日事，今日毕。</p>
+        </div>
+        <form v-on:submit.prevent="addTodo" class="input-todo">
+            <input v-model="current" type="text" placeholder="还要做点什么？">
+            <button type="submit">加入清单</button>
+        </form>
+        <div class="todo-list">
+            <h2>未完成（{{ uncompletedTodos.length }}）</h2>
+            <ul>
+                <li v-for="todo in uncompletedTodos" v-bind:key="todo.id">
+                    <span>{{ todo.content }}</span>
+                    <button v-on:click="markCompleted(todo.id)" class="done" type="button">完成</button>
+                    <button v-on:click="deleteTodo(todo.id)" class="delete" type="button">删除</button>
+                </li>
+            </ul>
+        </div>
+        <div class="todo-list completed">
+            <h2>已完成（{{ completedTodos.length }}）</h2>
+            <ul>
+                <li v-for="todo in completedTodos" v-bind:key="todo.id">
+                    <span>{{ todo.isCompleted ? todo.content : "" }}</span>
+                    <button v-on:click="markUncompleted(todo.id)" class="done" type="button">还原</button>
+                    <button v-on:click="deleteTodo(todo.id)" class="delete" type="button">删除</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="./js/main.js"></script>
+</body>
+</html>
